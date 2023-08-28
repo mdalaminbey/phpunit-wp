@@ -52,21 +52,6 @@ PHPUnit can be installed globally using Composer:
 	```sh
 	composer global require phpunit/phpunit:9.6.11
 	```
-### Setup test environment using install-wp-tests.sh
-
-1. Run the Command
-
-	Execute the following command, replacing `<db-name>`, `<db-user>`, `<db-pass>`, and `<db-host>` with your actual database details:
-
-	```sh
-	bash install-wp-tests.sh <db-name> <db-user> <db-pass> <db-host>	
-	```
-2. Example
-
-	As an example, here's how you might run the command:
-	```sh
-	bash bin/install-wp-tests.sh wordpress_test root '' localhost latest
-	```
 
 ### Generating Files for PHPUnit Tests in a Plugin
 
@@ -88,10 +73,27 @@ To generate the necessary files for running PHPUnit tests within a plugin, follo
         <const name="WP_TESTS_PHPUNIT_POLYFILLS_PATH" value="vendor/yoast/phpunit-polyfills"/>
 	</php>
 	```
-5. Run PHPUnit Tests:
+
+### Setup test environment using install-wp-tests.sh
+
+1. Run the Command
+
+	Execute the following command, replacing `<db-name>`, `<db-user>`, `<db-pass>`, and `<db-host>` with your actual database details:
+
 	```sh
-	phpunit
+	bash bin/install-wp-tests.sh <db-name> <db-user> <db-pass> <db-host>	
 	```
+2. Example
+
+	As an example, here's how you might run the command:
+	```sh
+	bash bin/install-wp-tests.sh wordpress_test root '' localhost latest
+	```
+
+### Run Unit Test
+```sh
+phpunit
+```
 
 ### Fix Fatal Error
 If you encounter a fatal error like the following:
